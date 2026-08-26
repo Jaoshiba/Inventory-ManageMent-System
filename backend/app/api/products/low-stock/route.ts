@@ -9,6 +9,7 @@ export async function GET(req: NextRequest) {
     const amountParam = searchParams.get("amount");
     const amount = amountParam ? Number(amountParam) : 5;
 
+    console.log("---------------------------", amount);
     const result = await productService.getLowStockProducts(amount);
 
     return NextResponse.json(result, { status: 200 });
